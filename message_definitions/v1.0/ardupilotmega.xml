@@ -7,7 +7,7 @@
   <include>cubepilot.xml</include>
   <include>csAirLink.xml</include>
   <dialect>2</dialect>
-  <!-- Note that ArduPilot-specific messages should use the command id range from 150 to 250, to leave plenty of room for growth of common.xml If you prototype a message here, then you should consider if it is general enough to move into common.xml later -->
+  <!-- Note that ArduPilot-specific messages should use the command id range from 150 to 250 to leave plenty of room for growth of common.xml If you prototype a message here, then you should consider if it is general enough to move into common.xml later -->
   <enums>
     <enum name="ACCELCAL_VEHICLE_POS">
       <entry value="1" name="ACCELCAL_VEHICLE_POS_LEVEL"/>
@@ -1606,6 +1606,15 @@
       <description>RPM sensor output.</description>
       <field type="float" name="rpm1">RPM Sensor1.</field>
       <field type="float" name="rpm2">RPM Sensor2.</field>
+    </message>
+    <message id="292" name="LED_CONFIG">
+      <description>Configuration to set the color of drones onboard LED lights.</description>
+      <field type="uint8_t" name="target_system" />
+      <field type="uint8_t" name="target_component" />
+      <field type="uint8_t" name="red" />
+      <field type="uint8_t" name="green" />
+      <field type="uint8_t" name="blue" />
+      <field type="uint8_t" name="led_index" />
     </message>
     <!-- ardupilot specific mavlink2 messages starting at 11000-->
     <message id="11000" name="DEVICE_OP_READ">
